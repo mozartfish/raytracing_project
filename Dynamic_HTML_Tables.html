@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+
+<body>
+  Here is my dynamically constructed table:
+  <table border="1">
+    <tr>
+      <td>I am a table cell</td>
+      <td>I am a second column</td>
+    </tr>
+    <tr>
+      <td>I am a first column on a second row</td>
+      <td>1,1</td>
+    </tr>
+  </table>
+</body>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script>
+  let n = 10;
+  let m = 4;
+  let x = '';
+  for (let i = 0; i < n; i++) {
+    x += '<tr>';
+    for (let j = 0; j < m; j++) {
+      // append a <td>...</td> to x
+	  x+='<td>' + i + ',' + j +'</td>';
+    }
+    x += '</tr>';
+  }
+  console.log(x);
+  jQuery('table').html(x);
+
+</script>
+
+
+</html>
