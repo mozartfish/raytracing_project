@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+
+<body>
+  <table  cellspacing="0" cellpadding="1">
+    <tr>
+      <td>I am a table cell</td>
+      <td>I am a second column</td>
+    </tr>
+    <tr>
+      <td>I am a first column on a second row</td>
+      <td>1,1</td>
+    </tr>
+  </table>
+</body>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script>
+  let n = 200;
+  let m = 200;
+  let x = '';
+  let rect = {x: 30, y: 20, w: 80, h: 50};
+  let color = '';
+  for (let i = 0; i < n; i++) {
+    x += '<tr>';
+    for (let j = 0; j < m; j++) {
+      // append a <td>...</td> to x
+	  color = pixel(i, j);
+	  
+	  
+	  x+= '<td style = "background:rgb('+color[0] + ',' + color[1] + ',' + color[2] + ')"></td>';
+	  
+	  
+    }
+    x += '</tr>';
+  }
+  console.log(x);
+  jQuery('table').html(x);
+
+  function pixel(i, j){
+	if (rect.x <= i && i < rect.x + rect.w && rect.y <= j && j < rect.y + rect.h) {
+		return [255, 0, 0];
+	}
+	else {
+		return [0, 0, 255];
+	}
+    
+
+  }
+  
+  // a method to generate random numbers inclusively
+  function rng(n){
+	return Math.floor(n * Math.random());
+  }
+</script>
+
+
+</html>
