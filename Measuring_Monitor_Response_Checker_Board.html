@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+
+<body>
+  <table  cellspacing="0" cellpadding="0">
+    <tr>
+      <td>I am a table cell</td>
+      <td>I am a second column</td>
+    </tr>
+    <tr>
+      <td>I am a first column on a second row</td>
+      <td>1,1</td>
+    </tr>
+  </table>
+</body>
+
+<style>
+  * {
+    box-sizing: border-box;
+    border-collapse: collapse;
+  }
+  td {
+    width: 5px;
+    height: 5px;
+  }
+</style>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script>
+  let n = 100;
+  let m = 100;
+  let x = '';
+  let color = '';
+  for (let i = 0; i < n; i++) {
+    x += '<tr>';
+    for (let j = 0; j < m; j++) {
+      // append a <td>...</td> to x
+	  color = pixel(i, j,);
+	  
+	  x+= '<td style = "background:rgb('+color[0] + ',' + color[1] + ',' + color[2] + ')"></td>';
+	  
+    }
+    x += '</tr>';
+  }
+  console.log(x);
+  jQuery('table').html(x);
+  function pixel(i, j) {
+	if ((i + j)% 2 != 0) {
+		return [255, 255, 255]
+	}
+	else {
+		return [0, 0, 0];
+	}
+  }
+
+</script>
+
+
+</html>
